@@ -51,6 +51,10 @@ define(['require'], function (require) {
                 return;
             }
 
+            if (url.indexOf(locationPrefix) === -1) {
+                url = locationPrefix + url;
+            }
+
             var index = historyStack.indexOf(url);
             if (index !== -1) {
 
@@ -79,11 +83,11 @@ define(['require'], function (require) {
         },
         restore: function () {
             var location = document.location.toString();
-            localStorage.setItem('urlSnapshot', location.replace(new RegExp('^.*?' + locationPrefix + '(.*?)$'), '$1'));
+            localStorage.setItem('urlSnapshot', location.replace(new RegExp('^.*?(' + locationPrefix + '.*?)$'), '$1'));
             localStorage.removeItem('lastTimeData');
             history.replaceState({
                 home: true
-            }, '', 'index.html');
+            }, '', locationPrefix + 'index.html');
             history.pushState(null, '', '');
             history.back();
         }

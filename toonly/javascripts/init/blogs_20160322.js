@@ -14,7 +14,7 @@ if (window === window.top) {
                 $('section.blog-header span').click(function (event) {
                     event.preventDefault();
 
-                    router.go('index_.html');
+                    router.go('blogcontent/index_.html');
                 });
             });
         });

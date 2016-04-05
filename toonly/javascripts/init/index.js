@@ -5,7 +5,7 @@ require(['jquery'], function ($) {
     $(function () {
         require(['toonly/javascripts/only-pageslide', 'toonly/javascripts/only-router'], function (pageSlide, router) {
             var urlSnapshot = pageSlide.init();
-            router.go(urlSnapshot ? urlSnapshot : 'index_.html');
+            router.go(urlSnapshot ? urlSnapshot : 'blogcontent/index_.html');
         });
     });
 });
