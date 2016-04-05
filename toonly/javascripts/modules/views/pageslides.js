@@ -7,9 +7,18 @@ define(['react', 'react-dom'], function (React, ReactDOM) {
 
         render: function () {
             return React.createElement(
-                'h1',
+                'div',
                 null,
-                'Hello World!!!'
+                React.createElement(
+                    'h1',
+                    null,
+                    'Hello World!!!'
+                ),
+                React.createElement(
+                    'p',
+                    null,
+                    'Arise!!!'
+                )
             );
         }
     });

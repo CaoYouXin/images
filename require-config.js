@@ -14,7 +14,9 @@
             'react-dom': 'javascripts/react-dom-0.14.8.min',
             'polyfill': 'javascripts/polyfill',
             'handlebars': 'javascripts/handlebars.min',
-            'utils': 'toonly/javascripts/utils'
+            'utils': 'toonly/javascripts/utils',
+            'models': 'toonly/javascripts/modules/models',
+            'views': 'toonly/javascripts/modules/views'
         }
     });
 })(require);

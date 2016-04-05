@@ -5,7 +5,10 @@ define(['react', 'react-dom'], function (React, ReactDOM) {
     var HHH = React.createClass({
         render: function () {
             return (
-                <h1>Hello World!!!</h1>
+                <div>
+                    <h1>Hello World!!!</h1>
+                    <p>Arise!!!</p>
+                </div>
             );
         }
     });
