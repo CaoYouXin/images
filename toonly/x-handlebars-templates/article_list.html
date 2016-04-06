@@ -1,14 +1,31 @@
 <style>
-    ul.blog {
+    ul.blogs {
         list-style: none;
-        padding: 0;
+        padding: 20px;
+        background: rgba(200, 200, 200, 0.3);
+        border-radius: 10px;
+    }
+
+    ul.blogs:before {
+        display: block;
+        width: auto;
+        height: 50px;
+        font-size: 30px;
+        line-height: 50px;
+        content: attr(data-rel);
+        color: #666666;
+        background: rgba(200, 200, 200, 0.5);
+        border-radius: 10px;
+        margin-bottom: 10px;
+        padding-left: 10px;
     }
 </style>
 
-<ul class="blog">
-    {{#each this}}
+{{#each this}}
+<ul class="blogs" data-rel="{{group}}">
+    {{#each blogs}}
     <li>
-        <h1>
+        <h1 style="margin: 0;">
             <a class="anchor" data-rel="{{url}}" href="#" aria-hidden="true">
                 <span aria-hidden="true" class="octicon octicon-link">{{name}}</span>
             </a>
@@ -16,3 +33,4 @@
     </li>
     {{/each}}
 </ul>
+{{/each}}

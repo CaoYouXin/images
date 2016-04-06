@@ -1,9 +1,29 @@
 [
   {
-    "url": "blogcontent/blogs_20160322.html",
-    "name": "CaoYouxin的博客@OSCHINA"
-  }, {
-    "url": "blogcontent/blog_java_default_values.html",
-    "name": "给Java对象填入默认值"
+    "group": "Old Blogs",
+    "blogs": [
+      {
+        "url": "blogcontent/blogs_20160322.html",
+        "name": "CaoYouxin的博客@OSCHINA"
+      }
+    ]
+  },
+  {
+    "group": "Java Blogs",
+    "blogs": [
+      {
+        "url": "blogcontent/blog_java_default_values.html",
+        "name": "给Java对象填入默认值"
+      },
+      {
+        "url": "blogcontent/blog_howto_cache.html",
+        "name": "如何做缓存?"
+      }
+    ]
+  },
+  {
+    "group": "H5 Blogs",
+    "blogs": [
+    ]
   }
 ]

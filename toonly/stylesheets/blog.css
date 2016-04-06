@@ -43,7 +43,11 @@ section.blog-header span {
 
 section.blog-content {
     color: #256;
-    width: 800px;
+    width: 100%;
+    padding: 0 calc((100% - 800px) / 2);
     margin: 0 auto;
+    background: -moz-linear-gradient(120deg, #fff, #fefefe);
+    background: -webkit-linear-gradient(120deg, #fff, #fefefe);
+    background: -o-linear-gradient(120deg, #fff, #fefefe);
     overflow: hidden;
 }
