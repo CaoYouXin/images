@@ -28,6 +28,10 @@
   {
     "group": "H5 Blogs",
     "blogs": [
+      {
+        "url": "blogcontent/blog_h5_size_adaption.html",
+        "name": "H5屏幕适配"
+      }
     ]
   }
 ]
