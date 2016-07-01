@@ -18,7 +18,28 @@
 </section>
 
 <section class="blog-content">
+    <p class="q">Doctype作用？严格模式与混杂模式如何区分？它们有何意义?</p>
+    <p class="a">Doctype的作用一定是描述文档本身, 并且告诉浏览器如何渲染该文档。DTD概念缘于SGML，每一份SGML 文件，均应有相对应的DTD。HTML5 不基于 SGML，所以不需要引用 DTD。</p>
+    <p class="a">严格模式与混杂模式是不同版本浏览器对具有不同Doctype的文档的不同渲染模式。其意义主要在于新版本浏览器兼容旧规范下的文档。</p>
+    <p class="a">HTML5 认准: <code>&lt;!DOCTYPE html&gt;</code></p>
+    <p class="q">HTML5 为什么只需要写&lt;!DOCTYPE html&gt;？</p>
+    <p class="a">HTML5 不基于 SGML，所以不需要引用 DTD。</p>
+    <p class="q">行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？</p>
+    <p class="a">首先说明: 行内元素和块级元素针对display的默认值而言, VOID 元素则是标签在一对尖括号内关闭(/)的元素。</p>
+<pre>
+（1）行内元素有：a b span img input select strong
+（2）块级元素有：div ul ol li dl dt dd h1 h2 h3 h4… p
 
+（3）常见的空元素：
+    br hr img input link meta
+    鲜为人知的是：
+    area base col command embed keygen param source track wbr
+</pre>
+    <p class="a"><a href="../tests/element_type.html" class="ex" target="_blank">元素类型: 行内元素上下补丁无效</a></p>
+    <p class="q">页面导入样式时，使用link和@import有什么区别？</p>
+    <p class="a">link属于XHTML标签，除了加载CSS外，还能用于定义RSS, 定义rel连接属性等作用；而@import是CSS提供的，只能用于加载CSS。</p>
+    <p class="a">link中定义的CSS文件会有按照加载次序的覆盖效果, 而@import加载的CSS不会覆盖link加载的CSS, 似乎在优先级上有区别。</p>
+    <p class="a"><a href="../tests/import_load.html" class="ex" target="_blank">@import加载时机</a></p>
 </section>
 
 <div id="tongji">
