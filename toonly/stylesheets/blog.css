@@ -60,6 +60,11 @@ section.blog-content > p.q {
     color: red;
 }
 
+section.blog-content > p.q:before {
+    content: '-->';
+    color: #1d3e81;
+}
+
 section.blog-content > p.a {
     color: green;
     text-indent: 2em;
