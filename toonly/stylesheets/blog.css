@@ -28,6 +28,11 @@ pre {
     border-left: 10px solid blanchedalmond;
 }
 
+strong {
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
 section.blog-header {
     color: white;
     padding: 0 256px;
