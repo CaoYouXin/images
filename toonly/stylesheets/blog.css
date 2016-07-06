@@ -63,20 +63,24 @@ section.blog-content {
 
 section.blog-content > p.q {
     color: red;
+    background-color: rgba(0, 0, 0, 0.2);
+    line-height: 30px;
+
+    border-top: 1px dashed black;
 }
 
 section.blog-content > p.q:before {
-    content: '-->';
-    color: #1d3e81;
+    content: '';
+    display: block;
+    float: left;
+    width: 10px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 section.blog-content > p.a {
     color: green;
     text-indent: 2em;
-}
-
-section.blog-content > p.a + p.q {
-    border-top: 1px dashed black;
 }
 
 section.blog-content code {
