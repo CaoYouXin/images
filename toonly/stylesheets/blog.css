@@ -78,6 +78,14 @@ section.blog-content > p.q:before {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+section.blog-content > p.q:after {
+    content: '';
+    display: block;
+    float: left;
+    width: 10px;
+    height: 30px;
+}
+
 section.blog-content > p.a {
     color: green;
     text-indent: 2em;
@@ -90,12 +98,12 @@ section.blog-content code {
 
 p.a > a.ex {
     color: #40AA53;
-    background: rgba(0, 0, 0, 0.3);
+
     text-decoration: none;
 }
 
 p.a > a.ex:before {
     content: '例: ';
-    font-size: medium;
+    font-size: 22px;
     color: #0000ff;
 }
