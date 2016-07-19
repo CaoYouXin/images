@@ -94,7 +94,33 @@
     <p class="a">在我的<a
             href="https://caoyouxin.gitbooks.io/pageslider/content/"
             class="" target="_blank">框架</a>中正是使用了iframe, 恰恰利用了iframe提供页面内嵌页面的逻辑。缺点不再赘述, 坑是要慢慢躺的。</p>
+    <p class="q">Label的作用是什么？是怎么用的？（加 for 或 包裹）</p>
+    <p class="a">语义化。<a href="../tests/labels.html" class="ex" target="_blank">请查看源代码</a></p>
+    <p class="q">HTML5的form如何关闭自动完成功能？</p>
+    <p class="a">设置autocomplete属性</p>
+    <p class="q">如何实现浏览器内多个标签页之间的通信? (阿里)</p>
+    <p class="a">localStorage, cookies, 后端接口调用。</p>
+    <p class="q">webSocket如何兼容低浏览器？(阿里)</p>
+    <p class="a">使用AS3, 前前公司的游戏用的就是它。</p>
+    <p class="q">页面可见性（Page Visibility）API 可以有哪些用途？</p>
+    <p class="a">这个什么鬼API在MDN上搜不到, 怀疑又是什么鬼编造出来的名词。CSS中控制可见性的属性有display, filter, 如果背景也算的话, 还包括background, box-shadow.</p>
+    <p class="q">如何在页面上实现一个圆形的可点击区域？</p>
+    <p class="a"><a href="blogcontent/blog_living_env.html" class="ex" target="_self">圆形, 你说地球?</a></p>
 </section>
+
+<script>
+    require(['jquery'], function ($) {
+        window.top.require(['toonly/javascripts/only-router'], function (router) {
+            $('a[target="_self"]').click(function(e) {
+                e.preventDefault();
+
+                var url = $(this).attr('href');
+
+                router.go(url);
+            });
+        });
+    });
+</script>
 
 <div id="tongji">
     <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
