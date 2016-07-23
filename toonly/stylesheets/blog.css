@@ -107,3 +107,7 @@ p.a > a.ex:before {
     font-size: 22px;
     color: #0000ff;
 }
+
+em {
+    color: red;
+}

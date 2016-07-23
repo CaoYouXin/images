@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/normalize.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../toonly/stylesheets/blog.css" media="screen">
+    <script id="require.min" type="text/javascript" src="../javascripts/require.min.js"></script>
+    <script type="text/javascript" src="../require-config.js"></script>
+    <script type="text/javascript" src="../toonly/javascripts/init/blog_.js"></script>
+</head>
+<body>
+<section class="blog-header">
+    <span>CaoYouXin's blog</span>
+</section>
+
+<section class="blog-content">
+    <p class="q">介绍一下标准的CSS的盒子模型？与低版本IE的盒子模型有什么不同的？</p>
+    <p class="a">也就是CSS3中的box-sizing属性的content-box和border-box, 其中后者为低版本IE的盒子模型。</p>
+    <p class="q">CSS选择符有哪些？哪些属性可以继承？</p>
+    <ol>
+        <li>*</li>
+        <li>#X</li>
+        <li>.X</li>
+        <li>X Y</li>
+        <li>X</li>
+        <li>X:visited and X:link</li>
+        <li>X + Y</li>
+        <li>X > Y</li>
+        <li>X ~ Y</li>
+        <li>X[attr]</li>
+        <li>X[attr="foo"]</li>
+        <li>X[attr*="mid"]</li>
+        <li>X[attr^="start"]</li>
+        <li>X[attr="end"]</li>
+        <li>X[attrStart-*="foo"]</li>
+        <li>X[foo~="bar"]&nbsp;&nbsp;&nbsp;&nbsp;a spaced-separated list of values</li>
+        <li>X:checked</li>
+        <li>X:before</li>
+        <li>X:after</li>
+        <li>X:hover</li>
+        <li>X:not(selector)</li>
+        <li>X::pseudoElement&nbsp;&nbsp;first-letter&nbsp;&nbsp;first-line</li>
+        <li>X:nth-child(n)</li>
+        <li>X:nth-last-child(n)</li>
+        <li>X:nth-of-type(n)</li>
+        <li>X:nth-last-of-type(n)</li>
+        <li>X:first-child</li>
+        <li>X:last-child</li>
+        <li>X:only-child</li>
+        <li>X:only-of-type</li>
+        <li>X:first-of-type</li>
+        <li>X:last-of-type</li>
+    </ol>
+    <ul>
+        <li>
+            不可继承的：display、margin、border、padding、background、height、min-height、max-height、width、min-width、max-width、overflow、position、left、right、top、bottom、z-index、float、clear、table-layout、vertical-align、page-break-after、page-bread-before和unicode-bidi。
+        </li>
+        <li>所有元素可继承：visibility和cursor。</li>
+        <li>
+            内联元素可继承：letter-spacing、word-spacing、white-space、line-height、color、font、font-family、font-size、font-style、font-variant、font-weight、text-decoration、text-transform、direction。
+        </li>
+        <li>终端块状元素可继承：text-indent和text-align。</li>
+        <li>列表元素可继承：list-style、list-style-type、list-style-position、list-style-image。</li>
+    </ul>
+    <p class="q">CSS优先级算法如何计算？</p>
+    <ul>
+        <li>元素标签中定义的样式（Style属性）,加1,0,0,0</li>
+        <li>每个ID选择符(如 #id),加0,1,0,0</li>
+        <li>每个Class选择符(如 .class)、每个属性选择符(如 [attribute=])、每个伪类(如 :hover)加0,0,1,0</li>
+        <li>每个元素选择符（如p）或伪元素选择符(如 :firstchild)等，加0,0,0,1</li>
+        <li>然后，将这四个数字分别累加，就得到每个CSS定义的优先级的值，</li>
+        <li>然后从左到右逐位比较大小，数字大的CSS样式的优先级就高。</li>
+        <li>!important声明的样式优先级最高，如果冲突再进行计算。</li>
+        <li>如果优先级相同，则选择最后出现的样式。</li>
+        <li>继承得到的样式的优先级最低。</li>
+        <li>Universal selector (*), combinators (+, >, ~, ' ') and negation pseudo-class (:not()) have no effect on specificity. (The selectors declared <em>inside</em> :not() do, however.)</li>
+    </ul>
+    <p class="q">CSS3新增伪类有那些？</p>
+    <p class="a">这一块真是百思不得其解。<a
+            href="https://developer.mozilla.org/en-US/Learn/CSS/Introduction_to_CSS/Selectors/Pseudo-classes_and_pseudo-elements"
+            target="_blank">MDN关于pseudo-classes和pseudo-elements的说明</a></p>
+    <p class="q">如何居中div？如何居中一个浮动元素？如何让绝对定位的div居中？</p>
+    <p class="a"><a class="ex" href="../tests/make_it_center.html" target="_blank">直接查看元素</a></p>
+</section>
+
+<div id="tongji">
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan id='cnzz_stat_icon_1258160569'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1258160569%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script>
+</div>
+</body>
+</html>
