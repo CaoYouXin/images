@@ -92,7 +92,31 @@
         <a href="../tests/display.html" class="ex" target="_blank">list-item和inline-list-item</a>
         <a href="../tests/ruby.html" class="ex" target="_blank">方块字拼音</a>
     </p>
+    <p class="q">position的值relative和absolute定位原点是？</p>
+    <p class="a">relative的定位原点在元素本来应该出现的位置上。</p>
+    <p class="a">absolute的定位原点在父元素的左上角, 如果 <em>所有</em> 父元素都没有设置position, 那么定位原点在body元素的左上角。</p>
+    <p class="q">CSS3有哪些新特性？</p>
+    <ul class="no-dec">
+        <li class="brief">
+            <p class="a">XXX</p>
+            <p class="a">XXX</p>
+        </li>
+        <li class="detail">
+            <p class="a">XXX</p>
+            <p class="a">XXX</p>
+        </li>
+    </ul>
 </section>
+
+<script>
+    require(['jquery'], function ($) {
+        $('ul.no-dec > li > p.a:first-child').click(function () {
+            var parent = $(this).parent();
+            parent.toggleClass('brief');
+            parent.toggleClass('detail');
+        });
+    });
+</script>
 
 <div id="tongji">
     <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");

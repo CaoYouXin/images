@@ -1,3 +1,8 @@
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
 
 #tongji {
     position: fixed;
@@ -59,12 +64,16 @@ section.blog-content {
     background: -webkit-linear-gradient(120deg, #fff, #fefefe);
     background: -o-linear-gradient(120deg, #fff, #fefefe);
     overflow: hidden;
+
+    font-size: 14px;
+    line-height: 20px;
 }
 
 section.blog-content > p.q {
     color: red;
     background-color: rgba(0, 0, 0, 0.2);
     line-height: 30px;
+    margin: 10px 0;
 
     border-top: 1px dashed black;
 }
@@ -110,4 +119,40 @@ p.a > a.ex:before {
 
 em {
     color: red;
+}
+
+ul.no-dec {
+    list-style: none;
+}
+
+ul.no-dec > li > p.a:first-child {
+    cursor: pointer;
+}
+
+ul.no-dec > li > p.a:not(:first-child) {
+    overflow: hidden;
+}
+
+ul.no-dec > li > p.a:first-child:before {
+    display: block;
+    float: left;
+    width: 20px;
+    height: 20px;
+    content: '';
+}
+
+li.brief > p.a:first-child {
+    background: url("../../images/plus.jpg") 0 center no-repeat;
+}
+
+li.detail > p.a:first-child {
+    background: url("../../images/minus.jpg") 0 center no-repeat;
+}
+
+li.brief > p.a:not(:first-child) {
+    height: 0;
+}
+
+li.detail > p.a:not(:first-child) {
+    height: auto;
 }
