@@ -96,21 +96,44 @@
     <p class="a">relative的定位原点在元素本来应该出现的位置上。</p>
     <p class="a">absolute的定位原点在父元素的左上角, 如果 <em>所有</em> 父元素都没有设置position, 那么定位原点在body元素的左上角。</p>
     <p class="q">CSS3有哪些新特性？</p>
-    <ul class="no-dec">
+    <ul class="drawer">
+        <li>CSS3选择器</li>
+        <li>@font-face</li>
+        <li>word-wrap、text-overflow</li>
         <li class="brief">
-            <p class="a">XXX</p>
-            <p class="a">XXX</p>
+            <p class="a">Text-decoration</p>
+            <p class="a">text-fill-color、text-stroke-color、text-stroke-width</p>
         </li>
-        <li class="detail">
-            <p class="a">XXX</p>
-            <p class="a">XXX</p>
+        <li class="brief">
+            <p class="a">Multi-column Layout</p>
+            <p class="a">column-count、column-rule、column-gap</p>
+        </li>
+        <li>边框和颜色</li>
+        <li class="brief">
+            <p class="a">渐变效果</p>
+            <p class="a">线性渐变、径向渐变</p>
+        </li>
+        <li class="brief">
+            <p class="a">阴影和反射效果</p>
+            <p class="a">文字阴影、盒子阴影（一个div绘制一副画）</p>
+        </li>
+        <li class="brief">
+            <p class="a">背景效果</p>
+            <p class="a">background-clip、background-origin、background-size、background-break</p>
+            <p class="a">多背景图片</p>
+        </li>
+        <li>盒子模型（牛X的flex盒子）</li>
+        <li class="brief">
+            <p class="a">动画</p>
+            <p class="a">transition-property、transition-duration、transition-delay、transition-timing-function</p>
+            <p class="a">transform: skew、scale、rotate、translate</p>
         </li>
     </ul>
 </section>
 
 <script>
     require(['jquery'], function ($) {
-        $('ul.no-dec > li > p.a:first-child').click(function () {
+        $('ul.drawer > li > p.a:first-child').click(function () {
             var parent = $(this).parent();
             parent.toggleClass('brief');
             parent.toggleClass('detail');

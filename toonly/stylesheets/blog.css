@@ -121,19 +121,19 @@ em {
     color: red;
 }
 
-ul.no-dec {
+ul.drawer {
     list-style: none;
 }
 
-ul.no-dec > li > p.a:first-child {
+ul.drawer > li > p.a:first-child {
     cursor: pointer;
 }
 
-ul.no-dec > li > p.a:not(:first-child) {
+ul.drawer > li > p.a:not(:first-child) {
     overflow: hidden;
 }
 
-ul.no-dec > li > p.a:first-child:before {
+ul.drawer > li > p.a:first-child:before {
     display: block;
     float: left;
     width: 20px;
