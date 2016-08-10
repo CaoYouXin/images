@@ -142,11 +142,11 @@ ul.drawer > li > p.a:first-child:before {
 }
 
 li.brief > p.a:first-child {
-    background: url("../../images/plus.jpg") 0 center no-repeat;
+    background: url("../../images/plus.jpg") 0 0 no-repeat;
 }
 
 li.detail > p.a:first-child {
-    background: url("../../images/minus.jpg") 0 center no-repeat;
+    background: url("../../images/minus.jpg") 0 0 no-repeat;
 }
 
 li.brief > p.a:not(:first-child) {
