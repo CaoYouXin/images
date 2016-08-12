@@ -191,6 +191,65 @@
         <li>overflow 除了 visible 以外的值（hidden，auto，scroll）</li>
     </ul>
     <p class="a"><a href="../tests/overflow.html" class="ex" target="_blank">直接查看源代码</a></p>
+    <p class="q">请解释一下为什么会出现浮动和什么时候需要清除浮动？清除浮动的方式</p>
+    <p class="a">浮动提供一种布局方式, 可以很方便的实现品字布局以及其它布局。</p>
+    <p class="a">简单说, 需要换行的时候需要通过清除浮动来完成。</p>
+    <p class="a">清除浮动有两种方式:</p>
+    <ul>
+        <li>在浮动元素后, 追加一个元素, 样式中加入clear: both;。追加的元素可以是伪元素。</li>
+        <li>在父元素上构建BFC</li>
+    </ul>
+    <p class="q">移动端的布局用过媒体查询吗？</p>
+    <p class="a">媒体查询几乎是写两套CSS, 不如使用flexbox, 在设计上多下功夫。</p>
+    <p class="q">使用 CSS 预处理器吗？喜欢那个？</p>
+    <p class="a">并没有使用过 CSS 预处理器, 喜欢自行设计选择器结构。</p>
+    <p class="a">另外, 使用过 CSS 压缩、合并插件。</p>
+    <p class="q">CSS优化、提高性能的方法有哪些？</p>
+    <p class="a">说到性能, 不得不提开发速度与代码可维护性。关于这些, 就之前的开发实践, 认为应该向semantic ui学习, 即将常用 CSS 功能作合理归类、拆分, 平时多积累, 这样才是写 CSS 的道路。</p>
+    <p class="q">浏览器是怎样解析CSS选择器的？</p>
+    <p class="a">解析 CSS 选择器离不开 HTML 的特性, ID唯一, class可以应用在多个标签上。所以, 解析过程先从ID开始, 然后从左至右。</p>
+    <p class="q">在网页中的应该使用奇数还是偶数的字体？为什么呢？</p>
+    <p class="a">偶数的多吧, 这个多是设计人员决定的。</p>
+    <p class="q">margin和padding分别适合什么场景使用？</p>
+    <p class="a">margin多用在边框外边距, 相反padding多用在边框内边距。</p>
+    <p class="q">抽离样式模块怎么写，说出思路，有无实践经验？[阿里航旅的面试题]</p>
+    <p class="a">模仿semantic ui, 首先可以抽出数字作为 class 的选择器。另外一条思路可以是根据开发中的新型界面抽离。</p>
+    <p class="q">元素竖向的百分比设定是相对于容器的高度吗？</p>
+    <p class="a">貌似是宽度。</p>
+    <p class="q">全屏滚动的原理是什么？用到了CSS的那些属性？</p>
+    <p class="a">滚动用到transform: translate(); overflow: hidden;</p>
+    <p class="q">什么是响应式设计？响应式设计的基本原理是什么？如何兼容低版本的IE？</p>
+    <p class="a">即能够适应不同屏幕尺寸的页面设计, 基本原理是使用媒体查询。低版本IE可以使用JS来实现媒体查询的功能。</p>
+    <p class="q">视差滚动效果，如何给每页做不同的动画？（回到顶部，向下滑动要再次出现，和只出现一次分别怎么做？）</p>
+    <p class="a">没做过, 看是看得出, 这是件体力活。</p>
+    <p class="q">::before 和 :after中双冒号和单冒号 有什么区别？解释一下这2个伪元素的作用。</p>
+    <p class="a">双冒号是伪元素, 单冒号是伪类。对于before和after这两种写法作用一样。</p>
+    <p class="q">如何修改chrome记住密码后自动填充表单的黄色背景 ？</p>
+    <p class="a">input:-webkit-autofill</p>
+    <p class="q">你对line-height是如何理解的？</p>
+    <p class="a">是个对inline元素以及inline元素内文本进行垂直居中的好属性。</p>
+    <p class="q">设置元素浮动后，该元素的display值是多少？（自动变成display:block）</p>
+    <p class="a">好神奇, 这可能是BFC的作用。</p>
+    <p class="q">怎么让Chrome支持小于12px 的文字？</p>
+    <p class="a">-webkit-transform: scale();</p>
+    <p class="q">让页面里的字体变清晰，变细用CSS怎么做？（-webkit-font-smoothing: antialiased;）</p>
+    <p class="a">反锯齿</p>
+    <p class="q">font-style属性可以让它赋值为“oblique” oblique是什么意思？</p>
+    <p class="a">人工倾斜版本, 另外两个值是normal、italic, 正常版本和斜体版本<a href="../tests/oblique.html" class="ex" target="_blank">查看代码</a></p>
+    <p class="q">position:fixed;在android下无效怎么处理？</p>
+    <p class="a">没遇到过这个问题哦, 百度了一下, viewport设置好了就OK。</p>
+    <p class="q">如果需要手动写动画，你认为最小时间间隔是多久，为什么？（阿里）</p>
+    <p class="a">多数显示器默认频率是60Hz，即1秒刷新60次，所以理论上最小间隔为1/60＊1000ms ＝ 16.7ms</p>
+    <p class="q">display:inline-block 什么时候会显示间隙？(携程)</p>
+    <p class="a">父容器字体大小不为0。</p>
+    <p class="q">overflow: scroll时不能平滑滚动的问题怎么处理？</p>
+    <p class="a">老实说, 没遇到这种情况, 看出平滑滚动对眼睛的考验蛮高的。这里记下网上的解答思路, 阻止所有能导致页面滚动的事件。</p>
+    <p class="q">有一个高度自适应的div，里面有两个div，一个高度100px，希望另一个填满剩下的高度。</p>
+    <p class="a">选定盒模型, 有两条思路, 补丁互补, 绝对定位。</p>
+    <p class="q">png、jpg、gif 这些图片格式解释一下，分别什么时候用。有没有了解过webp？</p>
+    <p class="a">png支持透明背景; jpg格式文件小, 下载快; gif支持动画。webp是谷歌推出的文件格式, 并没有深入了解。</p>
+    <p class="q">style标签写在body后与body前有什么区别？</p>
+    <p class="a">页面加载自上而下 当然是先加载样式。</p>
 </section>
 
 <script>
