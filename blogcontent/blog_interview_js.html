@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/normalize.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../toonly/stylesheets/blog.css" media="screen">
+    <script id="require.min" type="text/javascript" src="../javascripts/require.min.js"></script>
+    <script type="text/javascript" src="../require-config.js"></script>
+    <script type="text/javascript" src="../toonly/javascripts/init/blog_.js"></script>
+</head>
+<body>
+<section class="blog-header">
+    <span>CaoYouXin's blog</span>
+</section>
+
+<section class="blog-content">
+    <p class="q">介绍JavaScript的基本数据类型。</p>
+    <ul>
+        <li>Number 数字类型</li>
+        <li>String 字符串类型</li>
+        <li>Boolean 布尔类型</li>
+        <li>Function 函数</li>
+        <li>Object 对象</li>
+        <li>Null</li>
+        <li>Undefined 没有定义类型</li>
+    </ul>
+
+    <p class="q">说说写JavaScript的基本规范？</p>
+    <p class="a">一切都已经习惯成自然, 有一点很有意思: </p>
+    <p class="a">为了避免混乱，建议在HTML中使用双引号，在JavaScript中使用单引号。</p>
+
+    <p class="q">JavaScript原型，原型链? 有什么特点？</p>
+    <p class="a">prototype是构造函数的一个属性, 该属性指向一个对象. 而这个对象将作为该构造函数所创建的所有实例的基引用(base reference), 可以把对象的基引用想像成一个自动创建的隐藏属性. 当访问对象的一个属性时, 首先查找对象本身, 找到则返回; 若不, 则查找基引用指向的对象的属性(如果还找不到实际上还会沿着原型链向上查找,  直至到根). 只要没有被覆盖的话, 对象原型的属性就能在所有的实例中找到.</p>
+
+    <p class="q">JavaScript有几种类型的值？（堆：原始数据类型和 栈：引用数据类型），你能画一下他们的内存图吗？</p>
+    <p class="a">基本数据类型存储在栈中，引用数据类型（对象）存储在堆中，指针放在栈中。两种类型的区别是：存储位置不同；原始数据类型直接存储在栈(stack)中的简单数据段，占据空间小、大小固定，属于被频繁使用数据，所以放入栈中存储；引用数据类型存储在堆(heap)中的对象,占据空间大、大小不固定,如果存储在栈中，将会影响程序运行的性能；引用数据类型在栈中存储了指针，该指针指向堆中该实体的起始地址。当解释器寻找引用值时，会首先检索其在栈中的地址，取得地址后从堆中获得实体。</p>
+
+    <p class="q">Javascript如何实现继承？</p>
+    <p class="a">构造继承，原型继承，（实例继承，拷贝继承）。构造函数继承可以将构造函数的属性拷贝给实例（＊.call(this,[])）。但是缺点是无法实现函数复用。原型继承可以实现函数复用，但是所有实例共享一个属性，任意一个实例改变原型属性都会改变其它实例的属性值。推荐采用构造函数继承传递属性（拷贝），原型继承传递方法.</p>
+
+    <p class="q">Javascript创建对象的几种方式？</p>
+    <ul>
+        <li>对象字面量的方式p＝{};</li>
+        <li>用function来模拟无参的构造函数，再定义属性;</li>
+        <li>用function模拟构造函数，利用this;</li>
+        <li>利用工厂方式（内置对象Object）;</li>
+        <li>利用原型方式来创建;</li>
+        <li>混合方式来创建。</li>
+    </ul>
+</section>
+
+<div id="tongji">
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan id='cnzz_stat_icon_1258160569'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1258160569%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script>
+</div>
+</body>
+</html>
