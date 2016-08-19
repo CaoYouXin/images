@@ -350,7 +350,60 @@ $(array).stringify();
     <p class="q">如何判断当前脚本运行在浏览器还是node环境中？（阿里）</p>
     <p class="a">window对象。通过判断Global对象是否为window，如果不为window，当前脚本没有运行在浏览器中。</p>
 
-    <p class="q"></p>
+    <p class="q">移动端最小触控区域是多大？</p>
+    <p class="a">移动端最小触控区域 44*44px ，再小就容易点击不到或者误点。</p>
+
+    <p class="q">jQuery 的 slideUp动画 ，如果目标元素是被外部事件驱动, 当鼠标快速地连续触发外部元素事件, 动画会滞后的反复执行，该如何处理呢?</p>
+    <ol>
+        <li>在触发元素上的事件设置为延迟处理, 即可避免滞后反复执行的问题（使用setTimeout）</li>
+        <li>在触发元素的事件时预先停止所有的动画，再执行相应的动画事件（使用stop）</li>
+    </ol>
+    <ul>
+        <li>$("#div").stop();//停止当前动画，继续下一个动画</li>
+        <li>$("#div").stop(true);//清除元素的所有动画</li>
+        <li>$("#div").stop(false, true);//让当前动画直接到达末状态 ，继续下一个动画</li>
+        <li>$("#div").stop(true, true);//清除元素的所有动画，让当前动画直接到达末状态</li>
+    </ul>
+
+    <p class="q">移动端的点击事件的有延迟，时间是多久，为什么会有？ 怎么解决这个延时？</p>
+    <p class="a">click 有 300ms 延迟,为了实现safari的双击事件的设计，浏览器要知道你是不是要双击操作。</p>
+    <p class="a">使用touch事件代替click事件。</p>
+
+    <p class="q">知道各种JS框架(Angular, Backbone, Ember, React, Meteor, Knockout…)么? 能讲出他们各自的优点和缺点么?</p>
+    <p class="a">接触过Angular, Backbone, React。分别是依赖注入, MVC设计模式, 一门新语法。</p>
+
+    <p class="q">Underscore 对哪些 JS 原生对象进行了扩展以及提供了哪些好用的函数方法？</p>
+    <p class="a"><a href="http://underscorejs.org/#collections" class="ex" target="_blank">官方文档</a></p>
+
+    <p class="q">如何测试前端代码么? 知道BDD, TDD, Unit Test么? 知道怎么测试你的前端工程么(mocha, sinon, jasmin, qUnit..)?</p>
+    <p class="a">通过了解Angular, 认识到前端代码自动化测试工程。</p>
+
+    <p class="q">前端templating(Mustache, underscore, handlebars)是干嘛的, 怎么用?</p>
+    <p class="a">代替繁琐的拼接字符串的工作。</p>
+
+    <p class="q">简述一下 Handlebars 的基本用法？</p>
+    <p class="a"><a href="http://handlebarsjs.com/expressions.html" class="ex" target="_blank">官方文档</a></p>
+
+    <p class="q">简述一下 Handlerbars 的对模板的基本处理流程， 如何编译的？如何缓存的？</p>
+    <p class="a">我认真研读过doT的源代码, 模板编译的过程就是将模板语言转化为函数字符串, 其中重要的是数据变量名需保持一致。而handlebars应该是在模板中省略了该变量, 编译过程中自动添加的。</p>
+
+    <p class="q">用js实现千位分隔符?(来源：前端农民工，提示：正则+replace)</p>
+<pre>
+function thousandBitSeparator(num) {
+  return num && (num.toString().indexOf('.') != -1
+    ? num.toString().replace(/(\d)(?=(\d{3})+\.)/g, function($0, $1) {
+      return $1 + ",";
+    }) : num.toString().replace(/(\d)(?=(\d{3}))/g, function($0, $1) {
+      return $1 + ",";
+    }));
+}
+</pre>
+
+    <p class="q">检测浏览器版本版本有哪些方式？</p>
+    <p class="a">UserAgent</p>
+
+    <p class="q">我们给一个dom同时绑定两个点击事件，一个用捕获，一个用冒泡，你来说下会执行几次事件，然后会先执行冒泡还是捕获</p>
+    <p class="a">先捕获,后冒泡。</p>
 </section>
 
 <div id="tongji">
