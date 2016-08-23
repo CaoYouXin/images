@@ -48,6 +48,10 @@
       {
         "url": "blogcontent/blog_interview_js.html",
         "name": "JS相关问答"
+      },
+      {
+        "url": "blogcontent/blog_interview_other.html",
+        "name": "其它问答"
       }
     ]
   },
