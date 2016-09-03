@@ -56,15 +56,15 @@
     ]
   },
   {
-    "group": "个人性格",
+    "group": "个人",
     "blogs": [
       {
-        "url": "blogcontent/blog_my_words.html",
-        "name": "魔障!!!"
+        "url": "blogcontent/blog_living_env.html",
+        "name": "我们每个人的生存环境……"
       },
       {
-        "url": "blogcontent/blog_living_env.html",
-        "name": "我们每个人的生存环境"
+        "url": "blogcontent/blog_my_house.html",
+        "name": "家装……"
       }
     ]
   }
