@@ -156,3 +156,31 @@ li.brief > p.a:not(:first-child) {
 li.detail > p.a:not(:first-child) {
     height: auto;
 }
+
+ul.gallery {
+    list-style: none;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+
+    height: 220px;
+}
+
+ul.gallery > li {
+    width: 200px;
+    height: 200px;
+
+    flex-shrink: 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+ul.gallery > li > img {
+    width: 200px;
+    height: 200px;
+}
+
+ul.gallery > li > img:hover {
+    transform: scale(1.1);
+}

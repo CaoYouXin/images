@@ -18,8 +18,88 @@
 </section>
 
 <section class="blog-content">
+    <ul class="gallery">
+        <li><img src="../images/house/b.png"/></li>
+        <li><img src="../images/house/d.png"/></li>
+        <li><img src="../images/house/e.png"/></li>
+        <li><img src="../images/house/f.png"/></li>
+        <li><img src="../images/house/g.png"/></li>
+        <li><img src="../images/house/h.png"/></li>
+        <li><img src="../images/house/i.png"/></li>
+        <li><img src="../images/house/j.png"/></li>
+        <li><img src="../images/house/k.png"/></li>
+        <li><img src="../images/house/l.png"/></li>
+    </ul>
 
+    <ul class="gallery" style="margin-top: 30px;">
+        <li><img src="../images/house/200x200.png" height="200" width="200"/></li>
+        <li><img src="../images/house/200x200.png" height="200" width="200"/></li>
+        <li><img src="../images/house/200x200.png" height="200" width="200"/></li>
+        <li><img src="../images/house/200x200.png" height="200" width="200"/></li>
+        <li><img src="../images/house/200x200.png" height="200" width="200"/></li>
+        <li><img src="../images/house/200x200.png" height="200" width="200"/></li>
+        <li><img src="../images/house/200x200.png" height="200" width="200"/></li>
+        <li><img src="../images/house/200x200.png" height="200" width="200"/></li>
+        <li><img src="../images/house/200x200.png" height="200" width="200"/></li>
+        <li><img src="../images/house/200x200.png" height="200" width="200"/></li>
+    </ul>
+
+    <p style="margin-top: 30px;font-size: 30px;line-height: 30px;">参考: </p>
+    <ul class="gallery">
+        <li><img src="../images/house/柜.jpg"/></li>
+        <li><img src="../images/house/升降桌.jpg"/></li>
+        <li><img src="../images/house/椅子.jpg"/></li>
+    </ul>
 </section>
+
+<div id="cover" style="visibility: hidden;position: fixed;z-index: 1;width: 100%;height: 100%;top: 0;left: 0;background: rgba(0, 0, 0, 0.3);"></div>
+
+<script>
+    require(['jquery'], function ($) {
+        var $cover = $('#cover');
+        var $allLis = $('ul.gallery li');
+
+        $cover.click(function () {
+            $cover.css('visibility', 'hidden');
+            $allLis.removeClass('active');
+            $('#showEle').remove();
+        });
+
+        $('ul.gallery').on('click', 'img', {}, function (e) {
+            $cover.css('visibility', 'visible');
+
+            $allLis.removeClass('active');
+            this.parentElement.className = 'active';
+
+            var imageSrc = this.getAttribute('src');
+
+            var ele = document.createElement('div');
+
+            ele.id = 'showEle';
+            ele.style.background = 'url("' + imageSrc + '")';
+            ele.style.backgroundSize = 'contain';
+            ele.style.backgroundRepeat = 'no-repeat';
+            ele.style.backgroundPosition = '50%';
+
+            ele.style.position = 'absolute';
+            ele.style.zIndex = 2;
+            ele.style.transition = 'all 1s';
+            ele.style.top = this.clientTop + 'px';
+            ele.style.left = this.clientLeft + 'px';
+            ele.style.width = ele.style.height = '0px';
+
+            document.body.appendChild(ele);
+
+            setTimeout(function () {
+                ele.style.width = '600px';
+                ele.style.height = '500px';
+                ele.style.top = ele.style.left = '50%';
+                ele.style.marginTop = '-250px';
+                ele.style.marginLeft = '-300px';
+            }, 10);
+        });
+    });
+</script>
 
 <div id="tongji">
     <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
