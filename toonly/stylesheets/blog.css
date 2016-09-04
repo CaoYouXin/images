@@ -98,6 +98,9 @@ section.blog-content > p.q:after {
 section.blog-content > p.a {
     color: green;
     text-indent: 2em;
+
+    line-height: 20px;
+    background: url("../../images/back.png") repeat;
 }
 
 section.blog-content code {
