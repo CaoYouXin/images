@@ -81,6 +81,36 @@ define(['require'], function (require) {
             history.pushState(null, '', location.href);
             history.back();
         },
+        init: function (urls) {
+            console.log('gos: ', urls);
+            console.log('before: ', historyStack);
+
+            var i, url;
+
+            for (i = 0; i < urls.length; i++) {
+                url = urls[i];
+                if (url.match(/.*?:\/\/(.*?)\/.*/)) {
+                    alert('urls incorrect!');
+
+                    return;
+                }
+
+                if (url.indexOf(locationPrefix) === -1) {
+                    urls[i] = locationPrefix + url;
+                }
+
+                historyStack.push(url);
+
+                history.pushState({
+                    url: url
+                }, '', url);
+            }
+
+            historyStack.push(null);
+            history.pushState(null, '', location.href);
+
+            history.back();
+        },
         restore: function () {
             var location = document.location.toString();
             localStorage.setItem('urlSnapshot', location.replace(new RegExp('^.*?(' + locationPrefix + '.*?)$'), '$1'));

@@ -30,7 +30,7 @@ define(['jquery', 'handlebars', 'toonly/javascripts/only-router', 'polyfill'], f
 
             var urlSnapshot = localStorage.getItem('urlSnapshot');
             if (urlSnapshot) {
-                urlStack = JSON.parse(localStorage.getItem('urlStackSnapshot'));
+                urlStack = JSON.parse(localStorage.getItem('urlStackSnapshot')) || [];
                 localStorage.removeItem('urlSnapshot');
             }
 
