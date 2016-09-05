@@ -13,8 +13,8 @@ define(['jquery', 'handlebars', 'toonly/javascripts/only-router', 'polyfill'], f
             var self = this;
 
             $('body').html('<ul class="pageslides animation"></ul><div id="left" class="pager" ' +
-                'style="left: 0;"><svg><path style="fill:#ffff00;" d="M10 0 L70 50 L70 0"></path></svg></div><div id="right" class="pager" ' +
-                'style="right: 0;"><svg><path style="fill:#ffff00;" d="M10 0 L10 50 L70 0"></path></svg></div>');
+                'style="left: 0;"><svg><path style="fill:#ffff00;" d="M10 50 L70 0 L70 100"></path></svg></div><div id="right" class="pager" ' +
+                'style="right: 0;"><svg><path style="fill:#ffff00;" d="M10 0 L70 50 L10 100"></path></svg></div>');
 
             $('#left').click(function (event) {
                 event.preventDefault();
