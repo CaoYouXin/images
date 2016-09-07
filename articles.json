@@ -61,16 +61,16 @@
       {
         "url": "blogcontent/blog_shape_shifter.html?a=#time",
         "name": "Shape Shifter (#time)"
-      },
-      {
-        "url": "blogcontent/blog_my_vanished_love.html",
-        "name": "我那消失的爱"
       }
     ]
   },
   {
     "group": "个人",
     "blogs": [
+      {
+        "url": "blogcontent/blog_my_vanished_love.html",
+        "name": "我那消失的爱……"
+      },
       {
         "url": "blogcontent/blog_living_env.html",
         "name": "我们每个人的生存环境……"

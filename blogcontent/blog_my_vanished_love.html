@@ -108,7 +108,7 @@
                 var timer = time * 0.0001;
 
                 Util.Camera.position.x = Math.cos(timer) * 180;
-                Util.Camera.position.y = Math.abs(Math.cos(timer * 3)) * 30 + 15;
+                Util.Camera.position.y = Math.abs(Math.cos(timer * 3)) * 50 + 15;
                 Util.Camera.position.z = Math.sin(timer) * 180;
 
 //                Util.Camera.position.x = 0;
@@ -157,7 +157,9 @@
             },
             action1plus: function () {
                 var plusFn = function (delta) {
-                    Util.Scene.blackHoleRing.rotateY(Math.PI * delta * 0.9);
+                    for (var i = 0; i < Util.Scene.blackHoleRings.length; i++) {
+                        Util.Scene.blackHoleRings[i].rotateY(Math.PI * delta * (1.8 - 0.1 * i));
+                    }
                 };
 
                 if (typeof render === 'function') {
@@ -358,6 +360,11 @@
                 Util.Scene.add(mesh);
 
                 mesh = new THREE.Mesh(new THREE.SphereGeometry(
+                        radius * 20, widthSegments * 50, heightSegments * 50, phiStart, -phiLength, thetaStart, -thetaLength
+                ), new THREE.MeshPhongMaterial({map: textureObj.texture, color: 0xffffff}));
+                Util.Scene.add(mesh);
+
+                mesh = new THREE.Mesh(new THREE.SphereGeometry(
                         radius, widthSegments * 5, heightSegments * 5, phiStart, -phiLength, thetaStart, -thetaLength
                 ), new THREE.MeshPhongMaterial({map: textureObj.texture, color: 0xffffff}));
                 Util.Scene.add(mesh);
@@ -366,40 +373,45 @@
                 // The number of particles in a particle system is not easily changed.
                 var particleCount = 20000;
 
-                // Particles are just individual vertices in a geometry
-                // Create the geometry that will hold all of the vertices
-                var particles = new THREE.Geometry();
+                Util.Scene.blackHoleRings = [];
 
-                // Create the vertices and add them to the particles geometry
-                for (var p = 0; p < particleCount; p++) {
+                for (var i = 1; i < 10; i++) {
+                    // Particles are just individual vertices in a geometry
+                    // Create the geometry that will hold all of the vertices
+                    var particles = new THREE.Geometry();
 
-                    // This will create all the vertices in a range of -200 to 200 in all directions
-                    var randomAngle = Math.random() * 2 * Math.PI;
-                    var randomRadius = Math.random() * 50 + radius * 6;
-                    var x = randomRadius * Math.sin(randomAngle) ;
-                    var y = Math.random() * 2 - 1;
-                    var z = randomRadius * Math.cos(randomAngle);
+                    // Create the vertices and add them to the particles geometry
+                    for (var p = 0; p < particleCount * i; p++) {
 
-                    // Create the vertex
-                    var particle = new THREE.Vector3(x, y, z);
+                        // This will create all the vertices in a range of -200 to 200 in all directions
+                        var randomAngle = Math.random() * 2 * Math.PI;
+                        var randomRadius = Math.random() * i * (i + 2) + radius * 6;
+                        var x = randomRadius * Math.sin(randomAngle) ;
+                        var y = Math.random() - 0.5;
+                        var z = randomRadius * Math.cos(randomAngle);
 
-                    // Add the vertex to the geometry
-                    particles.vertices.push(particle);
+                        // Create the vertex
+                        var particle = new THREE.Vector3(x, y, z);
+
+                        // Add the vertex to the geometry
+                        particles.vertices.push(particle);
+                    }
+
+                    // Create the material that will be used to render each vertex of the geometry
+                    var particleMaterial = new THREE.PointsMaterial(
+                            {
+                                color: new THREE.Color('rgb('+(255 - i)+', '+(255 - i * 10)+', '+(255 - i * 20)+')'),
+                                size: 0.6,
+                                blending: THREE.AdditiveBlending,
+                                transparent: true
+                            });
+
+                    // Create & add the particle system
+                    var blackHoleRing = new THREE.Points(particles, particleMaterial);
+                    Util.Scene.add(blackHoleRing);
+
+                    Util.Scene.blackHoleRings.push(blackHoleRing);
                 }
-
-                // Create the material that will be used to render each vertex of the geometry
-                var particleMaterial = new THREE.PointsMaterial(
-                        {
-                            color: 0xfbfc7b,
-                            size: 1,
-                            blending: THREE.AdditiveBlending,
-                            transparent: true
-                        });
-
-                // Create & add the particle system
-                var blackHoleRing = new THREE.Points(particles, particleMaterial);
-                Util.Scene.add(blackHoleRing);
-                Util.Scene.blackHoleRing = blackHoleRing;
             }
         };
 
