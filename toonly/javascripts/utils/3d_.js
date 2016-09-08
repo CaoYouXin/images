@@ -54,7 +54,8 @@
             renderFn = !renderFn ? fn : renderFn;
             renderFn(delta);
             requestFrame.call(W, this.Loop.bind(this));
-        }
+        },
+        W: W
     };
 
 })(THREE, window, '#main');

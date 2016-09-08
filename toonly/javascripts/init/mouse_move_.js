@@ -1,14 +1,32 @@
-;(function (T, W) {
+;(function (T, _3d) {
 
     console.log(T);
-    console.log(W._3d);
+    console.log(_3d);
 
-    W._3d.Action();
-    W._3d.Loop(function (delta) {
-        W._3d.Camera.position.x = 20;
-        W._3d.Camera.position.y = 1.76;
-        W._3d.Camera.position.z = 5;
-        W._3d.Camera.lookAt({x: 0, y: 1.76, z: 0});
+    var isMoving = false;
+
+    _3d.W.addEventListener('keypress', function (e) {
+        if ('KeyG' === e.code) {
+            var ctrlStart = document.querySelector('.ctrl-start');
+
+            if (ctrlStart.style.visibility === '' || ctrlStart.style.visibility === 'hidden') {
+                ctrlStart.style.visibility = 'visible';
+            }
+        }
+    });
+
+    _3d.Canvas.addEventListener('mousemove', function (e) {
+        if (isMoving) {
+            console.log(e);
+        }
+    });
+
+    _3d.Action();
+    _3d.Loop(function (delta) {
+        _3d.Camera.position.x = 20;
+        _3d.Camera.position.y = 1.76;
+        _3d.Camera.position.z = 5;
+        _3d.Camera.lookAt({x: 0, y: 1.76, z: 0});
     });
 
     // Grid
@@ -27,6 +45,6 @@
 
     var line = new THREE.LineSegments(geometry, material);
 
-    W._3d.Scene.add(line);
+    _3d.Scene.add(line);
 
-})(THREE, window);
+})(THREE, window._3d);
