@@ -3,7 +3,7 @@
  */
 define(['require'], function (require) {
 
-    var locationPrefix = '127.0.0.1' === document.domain ? '/' : '/myblog/';
+    var locationPrefix = 'caols.tech' === document.domain ? '/' : '/myblog/';
     var historyStack = [];
     var skip = null;
     var _pageSlide = null;
