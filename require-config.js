@@ -16,7 +16,8 @@
             'handlebars': 'javascripts/handlebars.min',
             'utils': 'toonly/javascripts/utils',
             'models': 'toonly/javascripts/modules/models',
-            'views': 'toonly/javascripts/modules/views'
+            'views': 'toonly/javascripts/modules/views',
+            'init': 'toonly/javascripts/init'
         }
     });
 })(require);

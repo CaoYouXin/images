@@ -61,6 +61,10 @@
       {
         "url": "blogcontent/blog_shape_shifter.html?a=#time",
         "name": "Shape Shifter (#time)"
+      },
+      {
+        "url": "blogcontent/blog_mouse_move.html",
+        "name": "用鼠标操作行走（摇摆摇摆）"
       }
     ]
   },
