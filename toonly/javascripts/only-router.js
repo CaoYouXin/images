@@ -52,7 +52,7 @@ define(['require'], function (require) {
                 return;
             }
 
-            if (url.indexOf(locationPrefix) === -1) {
+            if (!url.match(new RegExp('^\\' + locationPrefix))) {
                 url = locationPrefix + url;
             }
 
