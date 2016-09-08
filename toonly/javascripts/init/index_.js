@@ -11,9 +11,9 @@ if (window === window.top) {
         $(function () {
             window.top.require(['handlebars', 'toonly/javascripts/only-router'], function (Handlebars, router) {
 
-                $.getJSON('/myblog/articles.json', function (data) {
+                $.getJSON(router.locationPrefix + 'articles.json', function (data) {
 
-                    $.get('/myblog/toonly/x-handlebars-templates/article_list.html', function (tpl) {
+                    $.get(router.locationPrefix + 'toonly/x-handlebars-templates/article_list.html', function (tpl) {
                         var tplFn = Handlebars.compile(tpl);
                         var html = tplFn(data);
 
