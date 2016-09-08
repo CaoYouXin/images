@@ -7,18 +7,19 @@
     }
 
     var canvas = document.querySelector(el);
+    // var ctx = canvas.getContext('2d');
 
     var camera = new THREE.PerspectiveCamera(45, canvas.clientWidth / canvas.clientHeight, 1, 2000);
 
     var scene = new THREE.Scene();
     scene.add(new THREE.AmbientLight(0xffffff));
 
-    var requestFrame = window.requestAnimationFrame       ||
+    var requestFrame = window.requestAnimationFrame ||
         window.webkitRequestAnimationFrame ||
-        window.mozRequestAnimationFrame    ||
-        window.oRequestAnimationFrame      ||
-        window.msRequestAnimationFrame     ||
-        function(callback) {
+        window.mozRequestAnimationFrame ||
+        window.oRequestAnimationFrame ||
+        window.msRequestAnimationFrame ||
+        function (callback) {
             window.setTimeout(callback, 1000 / 60);
         };
     var renderFn, clock = new THREE.Clock();
@@ -44,13 +45,15 @@
 
         },
         Loop: function (fn) {
-            
+
+            // ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
+
             var delta = clock.getDelta();
 
             THREE.AnimationHandler.update(delta);
             W._3d.Renderer.render(W._3d.Scene, W._3d.Camera);
             W._3d.Stats.update();
-            
+
             renderFn = !renderFn ? fn : renderFn;
             renderFn(delta);
             requestFrame.call(W, this.Loop.bind(this));

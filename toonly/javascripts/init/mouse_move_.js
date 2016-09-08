@@ -47,4 +47,11 @@
 
     _3d.Scene.add(line);
 
+    // env texture
+    var env = new THREE.Mesh(new THREE.SphereGeometry(
+        5 * 20, 3 * 50, 3 * 50, 0, - (2 * Math.PI), 0, - (Math.PI)
+    ), new THREE.MeshPhongMaterial({map: T.ImageUtils.loadTexture('../mini-images/stars_texture2942.jpg'), color: 0xffffff}));
+
+    _3d.Scene.add(env);
+
 })(THREE, window._3d);
