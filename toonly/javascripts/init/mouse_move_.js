@@ -25,8 +25,8 @@
     _3d.Loop(function (delta) {
         _3d.Camera.position.x = 20;
         _3d.Camera.position.y = 1.76;
-        _3d.Camera.position.z = 5;
-        _3d.Camera.lookAt({x: 0, y: 1.76, z: 0});
+        _3d.Camera.position.z = 20;
+        _3d.Camera.lookAt({x: 30, y: 1.76, z: 30});
     });
 
     // Grid
@@ -49,9 +49,22 @@
 
     // env texture
     var env = new THREE.Mesh(new THREE.SphereGeometry(
-        5 * 20, 3 * 50, 3 * 50, 0, - (2 * Math.PI), 0, - (Math.PI)
-    ), new THREE.MeshPhongMaterial({map: T.ImageUtils.loadTexture('../mini-images/stars_texture2942.jpg'), color: 0xffffff}));
+        5 * 20, 3 * 50, 3 * 50, 0, -(2 * Math.PI), 0, -(Math.PI)
+    ), new THREE.MeshPhongMaterial({
+        map: T.ImageUtils.loadTexture('../mini-images/stars_texture2942.jpg'),
+        color: 0xffffff
+    }));
 
     _3d.Scene.add(env);
+
+    // add text
+    var text = _3d.Text(['移动鼠标', '旋转镜头']);
+    text.rotation.set(0, - 3 / 4 * Math.PI, 0);
+    text.updateMatrix();
+    text.position.x = 50;
+    text.position.y = 10;
+    text.position.z = 36;
+
+        _3d.Scene.add(text);
 
 })(THREE, window._3d);
