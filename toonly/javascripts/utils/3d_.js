@@ -116,8 +116,10 @@
                         geo = new T.Geometry();
                     }
 
-                    var particle = new THREE.Vector3(x / factor, -y / factor, 0);
-                    geo.vertices.push(particle);
+                    for (var z = 0; z < 10; z++) {
+                        var particle = new THREE.Vector3(x / factor, -y / factor, z / factor);
+                        geo.vertices.push(particle);
+                    }
                 }
 
                 x += gap;

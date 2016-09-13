@@ -5,9 +5,14 @@
 
     var isMoving = false;
 
+    var ctrlStart = document.querySelector('.ctrl-start');
+
+    ctrlStart.addEventListener('click', function (e) {
+        isMoving = true;
+    });
+
     _3d.W.addEventListener('keypress', function (e) {
         if ('KeyG' === e.code) {
-            var ctrlStart = document.querySelector('.ctrl-start');
 
             if (ctrlStart.style.visibility === '' || ctrlStart.style.visibility === 'hidden') {
                 ctrlStart.style.visibility = 'visible';
@@ -18,6 +23,8 @@
     _3d.Canvas.addEventListener('mousemove', function (e) {
         if (isMoving) {
             console.log(e);
+        } else {
+            console.log(e.movementX, e.movementY);
         }
     });
 
