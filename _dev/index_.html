@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <title>CaoYouXin&#39;s blog by CaoYouXin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/normalize.min.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../toonly/stylesheets/blog.css" media="screen">
+    <script id="require.min" type="text/javascript" src="../javascripts/require.min.js"></script>
+    <script type="text/javascript" src="../require-config.js"></script>
+    <script type="text/javascript" src="../toonly/javascripts/init/index_.js"></script>
+
+    <style>
+        #resume-marker {
+            position: absolute;
+            top: 4em;
+            right: 4em;
+            width: 2em;
+            height: 2em;
+            text-align: center;
+            font-size: 26px;
+            line-height: 2em;
+            font-weight: bold;
+            cursor: pointer;
+            background: #fff;
+            color: #79a8ae;
+            opacity: 0.5;
+
+            transition: opacity 0.1s cubic-bezier(0.694, 0.0482, 0.335, 1);
+        }
+
+        #resume-marker:hover {
+            opacity: 1;
+        }
+
+        #resume {
+            cursor: pointer;
+            background: url("../images/曹力升的个人简历.jpg") no-repeat center;
+            background-size: contain;
+
+            width: 1px;
+            height: 1px;
+
+            position: fixed;
+            left: 0;
+            top: 0;
+
+            transform: rotateY(180deg);
+            transition: all 1s;
+        }
+
+        #resume.show {
+            left: 50px;
+            right: 50px;
+            top: 0;
+            bottom: 0;
+
+            width: auto;
+            height: auto;
+
+            transform: rotateY(0deg);
+        }
+    </style>
+</head>
+<body>
+<section class="page-header">
+    <h1 class="project-name">CaoYouXin&#39;s blog</h1>
+    <h2 class="project-tagline">^_^</h2>
+    <a target="_blank" href="https://github.com/CaoYouXin/myblog" class="btn">View on GitHub</a>
+    <a target="_blank" href="https://github.com/CaoYouXin/myblog/zipball/master" class="btn">Download .zip</a>
+    <a target="_blank" href="https://caoyouxin.gitbooks.io/pageslider/content" class="btn">View Book</a>
+
+    <div id="resume-marker" onclick="document.getElementById('resume').classList.add('show');">简</div>
+    <div id="resume" onclick="this.classList.remove('show');"></div>
+</section>
+
+<section class="main-content">
+    <div id="article_list"></div>
+</section>
+
+<div id="tongji">
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan id='cnzz_stat_icon_1258160569'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1258160569%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script>
+</div>
+</body>
+</html>
