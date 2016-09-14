@@ -66,8 +66,9 @@
 </ol>
 
 <script>
-    document.querySelector('ul.post-drawer-l').addEventListener('click', function (e) {
-        if (e.target.parentElement === this) {
+    document.addEventListener('click', function (e) {
+        var parentElement = e.target.parentElement;
+        if (parentElement.tagName === 'UL' && parentElement.classList.contains('post-drawer-l')) {
             e.target.classList.toggle('active');
         }
     });

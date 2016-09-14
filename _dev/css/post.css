@@ -31,11 +31,13 @@
     background-size: 6px 1.5em;
 }
 
+/* 列表 */
 ol.post-l > li, ul.post-l > li {
     font-size: 1.5em;
     list-style: inside;
 }
 
+/* 抽屉列表 */
 ul.post-drawer-l {
     list-style: square inside url('../../images/eg_arrow_right.png');
 }
@@ -50,4 +52,11 @@ ul.post-drawer-l > li > .hidden {
 
 ul.post-drawer-l > li.active > .hidden {
     display: block;
+}
+
+/* 代码框 */
+.code-border {
+    width: 100%;
+    border: solid 1px #000000;
+    box-shadow: 0 0 5px 3px rgba(0,0,0,0.75);
 }
