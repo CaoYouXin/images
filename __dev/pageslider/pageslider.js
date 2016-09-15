@@ -94,7 +94,7 @@
                         }
 
                         for (; i < oldItems.length; i++) {
-                            document.querySelector('li.pageslide[' + oldItems[i] + ']').remove();
+                            document.querySelector('li.pageslide[data-rel="' + oldItems[i] + '"]').remove();
                         }
 
                         append(ulElem, new RegExp('^(?:<li.*?</li>){' + j + '}(.*?)$').exec(html)[1]);
