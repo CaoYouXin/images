@@ -7,10 +7,7 @@
     }
 
     var canvas = document.querySelector(el);
-    // var ctx = canvas.getContext('2d');
-
     var camera = new THREE.PerspectiveCamera(45, canvas.clientWidth / canvas.clientHeight, 1, 2000);
-
     var scene = new THREE.Scene();
     scene.add(new THREE.AmbientLight(0xffffff));
 
@@ -38,9 +35,6 @@
     var fontSize = 100, gap = 4, factor = 20;
 
     function setFontSize(s) {
-
-        console.log('font size : ', s);
-
         paintCtx.font = 'bold ' + s + 'px ' + fontFamily;
     }
 
@@ -106,10 +100,6 @@
                 w = 0,
                 h = 0;
 
-            console.log('image data : ', pixels.some(function (cv, i) {
-                return (i + 1) % 4 === 0 && cv > 0;
-            }));
-
             for (var p = 0; p < pixels.length; p += (4 * gap)) {
                 if (pixels[p + 3] > 0) {
                     if (!geo) {
@@ -130,8 +120,6 @@
                     p += gap * 4 * paintCanvas.width;
                 }
             }
-
-            console.log('geo ', geo);
 
             var material = new THREE.PointsMaterial(
                 {
