@@ -4,6 +4,7 @@ var uglifyJs = require('gulp-uglify');
 var rename = require('gulp-rename');
 
 var __devSrc = './__dev/';
+var _devSrc = './_dev/';
 var dst = './build/';
 
 function jsDefault(src, dst) {
@@ -16,7 +17,7 @@ function jsDefault(src, dst) {
 }
 
 gulp.task('default', function() {
-  // place code for your default task here
+    gulp.start('b-ps', 'b-3d');
 });
 
 gulp.task('b-ps', function() {
