@@ -41,28 +41,10 @@
                 '</svg>' +
                 '</div>';
 
-            function process(id) {
-                if (id === 'left') {
-                    self.left();
-                    return true;
-                }
-
-                if (id === 'right') {
-                    self.right();
-                    return true;
-                }
-
-                return false;
-            }
-
-            document.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                var elem = e.target;
-                while (null !== elem && !process(elem.id)) {
-                    elem = elem.parentElement;
-                }
-            }, true);
+            document.getElementById('left').addEventListener('click', self.left, true);
+            document.getElementById('left').addEventListener('touchend', self.left, true);
+            document.getElementById('right').addEventListener('click', self.right, true);
+            document.getElementById('right').addEventListener('touchend', self.right, true);
 
             self.refresh();
         },
@@ -151,7 +133,8 @@
                 return false;
             }
 
-            router.go(slidesElems[indexOf - 1].getAttribute('data-rel'), PageSlider.go);
+            var url = slidesElems[indexOf - 1].getAttribute('data-rel');
+            router.go(url, PageSlider.go);
         },
         right: function () {
             var slidesElems = document.querySelectorAll('ul.pageslides > li.pageslide');

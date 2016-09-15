@@ -2,72 +2,21 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>CaoYouXin&#39;s blog by CaoYouXin</title>
+    <title>恍恍惚惚；杳杳冥冥！</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.min.css">
-    <style>
-        *, *:before, *:after {
-            margin: 0;
-            padding: 0;
-            border: 0 none;
-            font-weight: lighter;
-            -moz-box-sizing: border-box;
-            -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-        }
+    <link rel="stylesheet" type="text/css" href="build/pageslider/pageslider.min.css">
 
-        ul.pageslides {
-            position: fixed;
-            height: 100%;
-            list-style: none;
-        }
-
-        ul.pageslides > li.pageslide {
-            display: block;
-            float: left;
-            height: 100%;
-            padding: 0 80px;
-        }
-
-        iframe {
-            width: 100%;
-            height: 100%;
-        }
-
-        .animation {
-            -moz-transition: transform 0.8s;
-            -o-transition: transform 0.8s;
-            -webkit-transition: transform 0.8s;
-            transition: transform 0.8s;
-        }
-
-        div.pager {
-            position: fixed;
-            z-index: 999999999;
-            top: 0;
-
-            width: 80px;
-            height: 100%;
-
-            text-align: center;
-            color: white;
-            background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0, 0, 0, 0)), color-stop(0.5, rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0)));
-        }
-
-        div.pager > svg {
-            position: relative;
-            top: 50%;
-            left: 0;
-
-            margin-top: -50px;
-
-            width: 80px;
-            height: 100px;
-        }
-    </style>
-    <script id="require.min" type="text/javascript" src="./javascripts/require.min.js"></script>
-    <script type="text/javascript" src="require-config.js"></script>
-    <script type="text/javascript" src="toonly/javascripts/init/index.js"></script>
+    <script type="text/javascript" src="3rdLib/md5/md5.min.js"></script>
+    <script type="text/javascript" src="3rdLib/handlebars/handlebars.min.js"></script>
+    <script type="text/javascript" src="build/pageslider/router.min.js"></script>
+    <script type="text/javascript" src="build/pageslider/pageslider.min.js"></script>
 </head>
 <body>
+<script>
+    PageSlider.init();
+    Router.go('build/index_.html', PageSlider.go);
+</script>
 </body>
 </html>
