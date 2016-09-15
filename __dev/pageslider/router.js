@@ -36,6 +36,7 @@
     window.onpopstate = ops;
 
     window.Router = {
+        LocationPrefix: locationPrefix,
         go: function (url, cb) {
 
             if (url.match(/.*?:\/\/(.*?)\/.*/)) {

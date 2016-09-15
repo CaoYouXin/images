@@ -24,15 +24,16 @@
         margin-bottom: 10px;
         padding-left: 10px;
     }
+
 </style>
 
 {{#each this}}
 <ul class="blogs" data-rel="{{group}}">
     {{#each blogs}}
     <li>
-        <h1 style="margin: 0;">
-            <a class="anchor" data-rel="{{url}}" href="#" aria-hidden="true">
-                <span aria-hidden="true" class="octicon octicon-link">{{name}}</span>
+        <h1>
+            <a data-rel="{{url}}" href="#">
+                <span>{{name}}</span>
             </a>
         </h1>
     </li>
