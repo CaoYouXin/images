@@ -72,13 +72,13 @@ a:hover {
 }
 
 #resume-marker {
+    font-size: 2em;
     position: absolute;
     top: 3em;
     right: 4em;
     width: 2em;
     height: 2em;
     text-align: center;
-    font-size: 26px;
     line-height: 2em;
     font-weight: bold;
     cursor: pointer;
@@ -119,4 +119,11 @@ a:hover {
     height: auto;
 
     transform: rotateY(0deg);
+}
+
+.main-content {
+    max-width: 64rem;
+    padding: 2rem 6rem;
+    margin: 0 auto;
+    font-size: 1.1rem;
 }
