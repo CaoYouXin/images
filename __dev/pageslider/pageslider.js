@@ -3,7 +3,7 @@
  */
 ;(function (handlebars, router) {
 
-    var urlStack = [], regular = /data-rel=".*?"/g;
+    var urlStack = null, regular = /data-rel=".*?"/g;
 
     var pageslideTplFn = handlebars.compile('{{#each this}}' +
         '<li class="pageslide" data-rel="{{this}}">' +
@@ -26,7 +26,7 @@
     }
 
     window.PageSlider = {
-        init: function () {
+        init: function (urls) {
             var self = this;
 
             document.body.innerHTML = '<ul class="pageslides animation"></ul>' +
@@ -45,6 +45,8 @@
             document.getElementById('left').addEventListener('touchend', self.left, true);
             document.getElementById('right').addEventListener('click', self.right, true);
             document.getElementById('right').addEventListener('touchend', self.right, true);
+
+            urlStack = urls || [];
 
             self.refresh();
         },
@@ -113,6 +115,8 @@
                 }
 
                 slidesElems = PageSlider.refresh();
+
+                Cookies.set('ps-pages', urlStack);
             }
 
             for (var i = 0; i < slidesElems.length; i++) {

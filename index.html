@@ -9,14 +9,16 @@
     <link rel="stylesheet" type="text/css" href="build/pageslider/pageslider.min.css">
 
     <script type="text/javascript" src="3rdLib/md5/md5.min.js"></script>
+    <script type="text/javascript" src="3rdLib/js.cookie/js.cookie.js"></script>
     <script type="text/javascript" src="3rdLib/handlebars/handlebars.min.js"></script>
     <script type="text/javascript" src="build/pageslider/router.min.js"></script>
     <script type="text/javascript" src="build/pageslider/pageslider.min.js"></script>
 </head>
 <body>
 <script>
-    PageSlider.init();
-    Router.go('_dev/index_.html', PageSlider.go);
+    PageSlider.init(Cookies.getJSON('ps-pages'));
+    var urlSnapshot = Cookies.get('url-snapshot');
+    Router.go((null !== urlSnapshot && undefined !== urlSnapshot) ? urlSnapshot : '_dev/index_.html', PageSlider.go);
 </script>
 </body>
 </html>
