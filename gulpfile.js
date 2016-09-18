@@ -1,11 +1,14 @@
-var gulp = require('gulp');
-var minifyCss = require('gulp-minify-css');
-var uglifyJs = require('gulp-uglify');
-var rename = require('gulp-rename');
+const gulp = require('gulp');
+// const sourcemaps = require('gulp-sourcemaps');
+// const autoPrefixer = require('gulp-autoprefixer');
+const minifyCss = require('gulp-minify-css');
+const uglifyJs = require('gulp-uglify');
+const rename = require('gulp-rename');
+const concat = require('gulp-concat');
 
-var __devSrc = './__dev/';
-var _devSrc = './_dev/';
-var dst = './build/';
+const __devSrc = './__dev/';
+const _devSrc = './_dev/';
+const dst = './build/';
 
 function jsDefault(src, dst) {
     gulp.src(src)
@@ -28,6 +31,10 @@ gulp.task('b-ps', function() {
     jsDefault(jsSrc, psDst);
 
     gulp.src(cssSrc)
+        // .pipe(sourcemaps.init())
+        // .pipe(autoPrefixer())
+        // .pipe(concat('all.css'))
+        // .pipe(sourcemaps.write('.'))
         .pipe(minifyCss())
         .pipe(rename(function (path) {
             path.basename += ".min";

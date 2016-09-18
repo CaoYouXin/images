@@ -29,9 +29,6 @@ iframe {
 }
 
 .animation {
-    -moz-transition: transform 0.8s;
-    -o-transition: transform 0.8s;
-    -webkit-transition: transform 0.8s;
     transition: transform 0.8s;
 }
 
